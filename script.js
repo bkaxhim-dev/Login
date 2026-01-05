@@ -1,0 +1,41 @@
+const submite = document.getElementById('submite');
+const input = document.getElementById('pass')
+const toggle = document.querySelector('.toggle');
+
+submite.addEventListener('click', (e)=>{
+    const error = document.querySelector('error');
+
+    if(input.value.length < 8){
+        error.textContent = 'Password must be atleast 8 character';
+        error.style.color = 'red';
+        input.style.border = '2px solid red'
+        e.preventDefault();
+    }else{error.textContent = null;}
+})
+try{
+    toggle.addEventListener('click',()=>{
+    const span = document.querySelector('span');
+    const show = document.getElementById('show');
+    const hide = document.getElementById('hide');
+
+    if(input.type === 'password'){
+        input.type = 'text';
+        span.textContent = 'Hide Password';
+        show.style.display = 'block';
+        hide.style.display = 'none';
+    }else{
+        input.type = 'password';
+        span.textContent = 'Show Password';
+        show.style.display = 'none';
+        hide.style.display = 'block';
+    } 
+})
+}catch(error){console.log(error)}
+
+submite.addEventListener('click', ()=>{
+    const email = document.getElementById('email').value;
+    const pass = document.getElementById('pass').value;
+    
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', pass);
+})

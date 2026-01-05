@@ -1,0 +1,116 @@
+:root{
+    --primary-color: white;
+    --button-color: rgb(57, 57, 255);
+    --font-color: black;
+    --font-family: "syne";
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 200px),(max-width: 600px){
+    main{
+        width: 100vw;
+        height: 70vh;
+
+        #login{
+            margin: 5%;
+
+            .text{
+                text-align: center;
+                font-family: var(--font-family);
+
+                h1{
+                    font-size: 2.5rem;
+                }
+                p{
+                    font-size: 1.4rem;
+                    text-align: justify;
+                    letter-spacing: 1px;
+                    padding: 3% 0 10% 0;
+                }
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 0.7rem;
+
+                error{
+                    align-self: flex-end;
+                }
+                input{
+                    height: 50px;
+                    border-radius: 10px;
+                    border: 1px solid var(--font-color);
+                    text-indent: 10px;
+                    font-size: 1.1rem;
+                }
+                label{
+                    font-size: 1.4rem;
+                    font-family: var(--font-family);
+                }
+                button{
+                    align-self: flex-end;
+                    width: 30vw;
+                    height: 50px;
+                    font-size: 1.5rem;
+                    font-family: var(--font-family);
+                    background: var(--button-color);
+                    color: var(--primary-color);
+                    border-radius: 10px;
+                    border: none;
+                    cursor: pointer;
+                }
+                button:active{
+                    background-color: hsl(from var(--button-color)h s l /0.5);
+                }
+                .toggle{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.7em;
+                    img{
+                        width: 25px;
+                        height: 25px;
+                        cursor: pointer;
+                    }
+                    #show{
+                        display: none;
+                    }
+                    #hide{
+                        display: block;
+                    }
+                }
+            }
+            .create{
+                display: flex;
+                margin-top: 90px;
+                gap: 0.3rem;
+
+                h6{
+                    font-size: clamp(0.7rem, 1rem, 1.3rem);
+                    font-family: var(--font-family);
+                }
+                a{
+                    text-decoration: none;
+                    font-size: clamp(0.9rem, 1.1rem, 1.5rem);
+                    font-family: var(--font-family);
+                }
+            }
+        }
+        footer{
+            display: flex;
+            font-size: clamp(0.8rem, 0.9rem, 1.5rem);
+            font-family: var(--font-family);
+            margin-top: 100px;
+            justify-content: center;
+            }
+    }
+}
